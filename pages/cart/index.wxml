@@ -1,0 +1,64 @@
+<view class="cart-cl">
+    <!-- 收货地址 -->
+    <view class="selectAddress">
+        <van-button wx:if="{{!address.userName}}" bindtap="address" icon="plus" block color="linear-gradient(to right, #ec8087, #eb4450)">
+            收货地址
+        </van-button>
+        <view wx:else class="address">
+            <view>
+                <text class="province">{{address.provinceName}}{{address.cityName}}</text>
+                <text class="county">{{address.countyName}}{{address.detailInfo}}</text>
+            </view>
+            <view class="user">
+                <text class="username">{{address.userName}}</text>
+                <text class="usertel">{{address.telNumber}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 商品列表 -->
+    <!-- <goods cartGoods="{{cartGoods}}"></goods> -->
+    <van-swipe-cell data-i="{{index}}" wx:for="{{cartGoods}}" wx:key="goods_id" id="swipe-cell" right-width="{{ 65 }}" async-close bind:close="onClose">
+        <van-cell-group>
+            <view class="goods">
+                <view class="goods-message">
+                    <view class="checked">
+                        <checkbox-group data-i="{{index}}" bindchange="changechecked">
+                            <checkbox class="" value="1" checked="{{item.checked}}" color="#eb4450"></checkbox>
+                        </checkbox-group>
+                    </view>
+                    <navigator class="goods_img">
+                        <image src="{{item.goods_small_logo}}" lazy-load="true"></image>
+                    </navigator>
+                    <view class="goods_describe flex">
+                        <view class="">{{item.goods_name}}</view>
+                        <view class="flex a-i priceandnumber" style="justify-content:space-between;">
+                            <view class="price">￥{{item.goods_price}}</view>
+                            <!-- <view class="number">
+                        <text style="margin-right:4rpx">x</text>
+                        {{item.num}}
+                    </view> -->
+                        </view>
+                    </view>
+                </view>
+                <view class="changenumber flex">
+                    <!-- <view data-num="{{item.num}}" bindtap="sub" class="btn" hover-class>-</view>
+            <view data-num="{{item.num}}" bindtap="add" class="btn" hover-class>+</view> -->
+                    <van-stepper data-i="{{index}}" value="{{ item.num }}" bind:change="changeGoodsNumber" />
+                </view>
+            </view>
+        </van-cell-group>
+        <view class="swipeRight" slot="right">删除</view>
+    </van-swipe-cell>
+    <view wx:if="{{cartGoods.length<=0}}" class="cartEmpt">
+        <image class="" src="http://img11.360buyimg.com/jdphoto/s180x180_jfs/t18163/292/540553659/74408/adeb7463/5a93c51cN3bb5e37b.png" mode="widthFix" lazy-load="false"></image>
+        <text>您的购物车空空如也</text>
+    </view>
+    <van-dialog id="van-dialog" />
+    <!-- <goodslist></goodslist> -->
+    <van-submit-bar price="{{ allprice*100 }}" disabled="{{goodsTotalNumber>0?false:true}}" button-text="提交订单({{goodsTotalNumber}})" bind:submit="submitOrder" tip="{{ true }}" safe-area-inset-bottom>
+        <checkbox-group wx:if="{{cartGoods.length>0}}" bindchange="changeallselect">
+            <checkbox class="" value="1" checked="{{allselect}}" color="#eb4450"></checkbox>
+        </checkbox-group>
+    </van-submit-bar>
+</view>
+<van-dialog id="van-dialog" />

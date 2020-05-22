@@ -1,0 +1,38 @@
+@import './styles/iconfont.wxss';
+
+page,
+view,
+text,
+swiper,
+swiper-item,
+iamge,
+navigator {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+page {
+    --themeColor: #eb4450;
+    font-size: 28rpx;
+}
+
+.flex {
+    display: flex;
+}
+
+.j-c {
+    justify-content: center;
+}
+
+.a-i {
+    align-items: center;
+}
+
+/* 第二行文字多出 ... 表现 */
+.omit2 {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+}

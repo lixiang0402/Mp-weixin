@@ -1,0 +1,95 @@
+/* 轮播图 */
+.home {
+    position: relative;
+}
+
+.swiper_cl {
+    width: 100vw;
+    height: calc(100vw/(750/340));
+}
+
+.swiper_cl image {
+    width: 100%;
+}
+
+/* 导航栏 */
+
+.nav_cl {
+    display: flex;
+    justify-content: space-around;
+}
+
+.nav_cl>navigator {
+    padding: 25rpx;
+    flex: 1;
+}
+
+.nav_cl navigator image {
+    width: 100%;
+}
+
+/* 楼层区域 */
+.every_cl {}
+
+.title {
+    padding: 4rpx 0;
+}
+
+.title image {
+    width: 100vw;
+}
+
+.content {
+    overflow: hidden;
+}
+
+.content navigator {
+    float: left;
+    width: 33.33vw;
+    padding: 4rpx;
+}
+
+.content navigator:nth-last-child(-n+4) {
+    /* 232/386=33.33vw/? */
+    height: calc(33.33vw/(232/386)/2);
+}
+
+.content navigator:nth-child(1) {
+    padding-left: 0;
+}
+
+.content navigator:nth-child(3),
+.content navigator:nth-child(5) {
+    padding-right: 0;
+}
+
+.content navigator:nth-child(4),
+.content navigator:nth-child(5) {
+    padding-bottom: 1rpx;
+}
+
+.content navigator image {
+    width: 100%;
+    height: 100%;
+}
+
+.qsearch {
+    position: absolute;
+    top: 0;
+    z-index: 999;
+    width: 100vw;
+    top: 86rpx;
+    background-color: #fff;
+    border-radius: 0 0 20rpx;
+    padding: 0 15rpx;
+}
+
+.qsearch-item {
+    border-bottom: 2rpx solid #ccc;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 60rpx;
+    font-size: 34rpx;
+    color: silver;
+}

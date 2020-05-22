@@ -1,0 +1,26 @@
+<view class="goods-list">
+    <!-- 搜索框 -->
+    <van-search use-action-slot value="{{ value }}" shape="round" background="#eb4450" placeholder="请输入搜索关键词">
+        <view slot="action" bind:tap="search">搜索</view>
+    </van-search>
+    <!-- tab栏 -->
+    <van-tabs active="{{ active }}">
+        <van-tab title="综合">
+            <view>
+                <navigator class="goods_cl" wx:for="{{goodsList}}" wx:key="goods_id" url="../goods_detail/index?goods_id={{item.goods_id}}">
+                    <!-- 左侧商品图片 -->
+                    <view class="goods-img">
+                        <image lazy-load="{{true}}" mode="widthFix" class="" src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}"></image>
+                    </view>
+                    <!-- 右侧商品详情 -->
+                    <view class="goods-detail">
+                        <view class="omit2 goods-name">{{item.goods_name}}</view>
+                        <view class="goods-price">￥{{item.goods_price}}</view>
+                    </view>
+                </navigator>
+            </view>
+        </van-tab>
+        <van-tab title="价格">内内容内容内容内容内容内容内容内容内容内容内容内容容 2</van-tab>
+        <van-tab title="销量">内容内容内容内容内容内容内容内容内容内容内容内容内容 3</van-tab>
+    </van-tabs>
+</view>

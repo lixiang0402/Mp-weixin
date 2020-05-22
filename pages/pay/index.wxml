@@ -1,0 +1,37 @@
+<view class="cart-cl">
+    <!-- 收货地址 -->
+    <view class="selectAddress">
+        <view class="address">
+            <view>
+                <text class="province">{{address.provinceName}}{{address.cityName}}</text>
+                <text class="county">{{address.countyName}}{{address.detailInfo}}</text>
+            </view>
+            <view class="user">
+                <text class="username">{{address.userName}}</text>
+                <text class="usertel">{{address.telNumber}}</text>
+            </view>
+        </view>
+    </view>
+    <!-- 商品列表 -->
+    <van-swipe-cell data-i="{{index}}" wx:for="{{cartGoods}}" wx:key="goods_id" id="swipe-cell">
+        <van-cell-group>
+            <view class="goods">
+                <view class="goods-message">
+                    <navigator class="goods_img">
+                        <image mode="widthFix" src="{{item.goods_small_logo}}" lazy-load="{{true}}"></image>
+                    </navigator>
+                    <view class="goods_describe flex">
+                        <view class="">{{item.goods_name}}</view>
+                        <view class="flex a-i priceandnumber" style="justify-content:space-between;">
+                            <view class="price">￥{{item.goods_price}}</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="changenumber flex">
+                    <van-stepper disabled show-plus="{{false}}" show-minus="{{false}}" data-i="{{index}}" value="{{ item.num }}" bind:change="changeGoodsNumber" />
+                </view>
+            </view>
+        </van-cell-group>
+    </van-swipe-cell>
+    <van-submit-bar price="{{ allprice*100 }}" button-text="支付({{goodsTotalNumber}})" bind:submit="payOrder" tip="{{ true }}" safe-area-inset-bottom></van-submit-bar>
+</view>

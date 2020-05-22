@@ -1,0 +1,60 @@
+<view class="personal">
+    <!-- 用户头像 名称 -->
+    <van-cell>
+        <view class="flex a-i" wx:if="{{userinfo.nickName}}">
+            <van-image data-image="{{userinfo.avatarUrl}}" bindtap="previewImg" fit="cover" width="100" height="100" round src="{{userinfo.avatarUrl}}" />
+            <view class="nickName">{{userinfo.nickName}}</view>
+        </view>
+        <view class="flex a-i" wx:else>
+            <van-image fit="cover" width="100" height="100" round />
+            <van-button open-type="getUserInfo" bindgetuserinfo="getuserinfo" square color="#eb4450" type="primary" custom-style="border:none;margin-left:30rpx">
+                点击登录
+            </van-button>
+        </view>
+    </van-cell>
+    <!-- 店铺商品相关信息 -->
+    <van-cell custom-class="cell-cl">
+        <van-grid border="{{false}}" clickable>
+            <van-grid-item text="收藏的店铺">
+                <view slot='icon'>0</view>
+            </van-grid-item>
+            <van-grid-item text="收藏的商品" bind:click="toCollectPage">
+                <view slot='icon'>{{collectCarLength}}</view>
+            </van-grid-item>
+            <van-grid-item text="关注的商品">
+                <view slot='icon'>0</view>
+            </van-grid-item>
+            <van-grid-item text="我的足迹">
+                <view slot='icon'>0</view>
+            </van-grid-item>
+        </van-grid>
+    </van-cell>
+    <!-- 订单相关信息 -->
+    <van-cell custom-class="cell-cl">
+        <van-grid border="{{false}}" clickable>
+            <van-grid-item text="全部订单">
+                <view slot='icon' class="iconfont icon-dingdan my-icon"></view>
+            </van-grid-item>
+            <van-grid-item text="待付款">
+                <view slot='icon' class="iconfont icon-fufei my-icon"></view>
+            </van-grid-item>
+            <van-grid-item text="待收货">
+                <view slot='icon' class="iconfont icon-wuliu my-icon"></view>
+            </van-grid-item>
+            <van-grid-item text="退货/退款">
+                <view slot='icon' class="iconfont icon-tuihuotuikuan- my-icon"></view>
+            </van-grid-item>
+        </van-grid>
+    </van-cell>
+    <!-- 收货地址管理 -->
+    <van-cell custom-class="cell-cl" title-class='my-title' title="收货地址管理" is-link />
+    <!-- 客服 意见相关 -->
+    <van-cell-group custom-class='cell-cl'>
+        <van-cell title-class='my-title' title="联系客服" value="18330010171" bind:click="callKefu" is-link />
+        <van-cell title="意见反馈" bind:click='feedback' is-link title-class='my-title' />
+        <van-cell title="关于我们" is-link title-class='my-title' />
+    </van-cell-group>
+    <!-- 把应用推荐给其他人 -->
+    <van-cell custom-class="cell-cl" title="把应用推荐给其他人" title-class='my-title' is-link />
+</view>
+<!-- <van-action-sheet style="height:40vh" round show="{{ show }}" safe-area-inset-bottom actions="{{ actions }}" bind:close="onClose" bind:getuserinfo="onGetUserInfo" /> -->

@@ -1,0 +1,29 @@
+<view class="category_cl">
+    <!-- 搜索框 -->
+    <!-- height 108rpx -->
+    <van-search class="search" use-action-slot value="{{ value }}" shape="round" background="#eb4450" placeholder="请输入搜索关键词">
+        <view slot="action" bind:tap="search">搜索</view>
+    </van-search>
+    <van-row class="container">
+        <van-col span="7">
+            <scroll-view scroll-y class="left-scroll">
+                <view wx:key="index" data-i="{{index}}" bindtap="changeTitleAndShow" class="left-title {{activeIndex==index?'active':''}}" wx:for="{{leftMenuList}}">
+                    {{item}}
+                </view>
+            </scroll-view>
+        </van-col>
+        <van-col span="17">
+            <scroll-view scroll-top="{{scrollTop}}" scroll-y class="right-scroll">
+                <view class="right-content" wx:for="{{rightMenuList}}" wx:for-item="item1" wx:key="index1" wx:for-index="index1">
+                    <view class="right-list-title">{{item1.cat_name}}</view>
+                    <view class="right-list-content">
+                        <navigator class="goods-every" wx:key="index2" wx:for="{{item1.children}}" wx:for-item="item2" wx:for-index="index2" url="../goods_list/index?cid={{item2.cat_id}}">
+                            <image lazy-load mode="widthFix" class="goods-icon" src="{{item2.cat_icon}}"></image>
+                            <view class="">{{item2.cat_name}}</view>
+                        </navigator>
+                    </view>
+                </view>
+            </scroll-view>
+        </van-col>
+    </van-row>
+</view>

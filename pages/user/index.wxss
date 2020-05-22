@@ -1,0 +1,27 @@
+@import '../../styles/iconfont.wxss';
+
+page {
+    background-color: #f2f2f2;
+    padding-bottom: 40rpx;
+}
+
+.nickName {
+    margin-left: 30rpx;
+    font-size: 50rpx;
+    font-weight: bold;
+    letter-spacing: 10rpx;
+}
+
+.cell-cl {
+    margin-top: 20rpx;
+}
+
+.my-icon {
+    font-size: 42rpx;
+    color: var(--themeColor);
+}
+
+.my-title {
+    color: #646566;
+    font-size: 29rpx;
+}

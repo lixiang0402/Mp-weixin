@@ -1,0 +1,1 @@
+export const BASE_URL = "https://api-hmugo-web.itheima.net/api/public/v1"

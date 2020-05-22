@@ -1,0 +1,38 @@
+<view class="home">
+    <!-- 搜索框 -->
+    <van-search bind:change="valueChange" use-action-slot shape="round" background="#eb4450" placeholder="请输入搜索关键词"></van-search>
+    <!-- 轮播区域 -->
+    <swiper interval="2500" circular indicator-dots autoplay="{{true}}" class="swiper_cl">
+        <swiper-item wx:key="goods_id" wx:for="{{swiperList}}" class="" item-id="">
+            <navigator url="{{item.navigator_url}}" hover-class="navigator-hover">
+                <image lazy-load="{{true}}" mode="widthFix" src="{{item.image_src}}" />
+            </navigator>
+        </swiper-item>
+    </swiper>
+    <!-- 导航区 -->
+    <view class="nav_cl">
+        <navigator open-type="switchTab" wx:key="name" wx:for="{{navList}}" url="{{item.navigator_url}}">
+            <image mode="widthFix" lazy-load="{{true}}" src="{{item.image_src}}"></image>
+        </navigator>
+    </view>
+    <!-- 楼层区域 -->
+    <view class="floor">
+        <view class="every_cl" wx:key="name" wx:for="{{floorList}}" wx:for-item="item1" wx:for-index="index1">
+            <!-- 每个楼层的标题 -->
+            <view class="title">
+                <image lazy-load="{{true}}" mode="widthFix" src="{{item1.floor_title.image_src}}"></image>
+            </view>
+            <!-- 每个楼层的内容 -->
+            <view class="content">
+                <navigator url="{{item2.navigator_url}}" wx:key="name" wx:for="{{item1.product_list}}" wx:for-item="item2" wx:for-index="index2">
+                    <image lazy-load="{{true}}" mode="{{index2==0?'widthFix':'scaleToFill'}}" src="{{item2.image_src}}" />
+                </navigator>
+            </view>
+        </view>
+    </view>
+    <view class="qsearch">
+        <navigator url="/pages/goods_detail/index?goods_id={{item.goods_id}}" class="qsearch-item" wx:if="{{isQsearchShow}}" wx:for="{{qsearch}}" wx:key="goods_id">
+            {{item.goods_name}}
+        </navigator>
+    </view>
+</view>

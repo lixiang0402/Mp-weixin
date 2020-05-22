@@ -1,0 +1,27 @@
+<!-- <view class="goods" wx:for="{{goodsList}}" wx:key="goods_id">
+    <view class="goods-message">
+        <view class="checked">
+            <radio class="" value="" checked="false" color="#eb4450"></radio>
+        </view>
+        <navigator class="goods_img">
+            <image src="{{item.goods_img[0]}}" mode="widthFix" lazy-load="true"></image>
+        </navigator>
+        <view class="goods_describe flex">
+            <view class="">{{item.goods_name}}</view>
+            <view class="flex a-i priceandnumber" style="justify-content:space-between;">
+                <view class="price">￥{{item.goods_price}}</view>
+                <view class="number">
+                    <text style="margin-right:4rpx">x</text>
+                    {{item.num}}
+                </view>
+            </view>
+        </view>
+    </view>
+    <view class="changenumber flex">
+        <view class="btn" hover-class>-</view>
+        <view class="btn" hover-class>+</view>
+    </view>
+</view> -->
+
+
+<view>123123</view>

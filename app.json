@@ -1,0 +1,81 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/auth/index",
+        "pages/cart/index",
+        "pages/category/index",
+        "pages/collect/index",
+        "pages/feedback/index",
+        "pages/goods_detail/index",
+        "pages/goods_list/index",
+        "pages/login/index",
+        "pages/order/index",
+        "pages/pay/index",
+        "pages/search/index",
+        "pages/user/index"
+    ],
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#ff2d4a",
+        "backgroundColor": "#fafafa",
+        "position": "bottom",
+        "borderStyle": "black",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "./assets/icons/home.png",
+                "selectedIconPath": "./assets/icons/home-o.png"
+            },
+            {
+                "pagePath": "pages/category/index",
+                "text": "分类",
+                "iconPath": "./assets/icons/category.png",
+                "selectedIconPath": "./assets/icons/category-o.png"
+            },
+            {
+                "pagePath": "pages/cart/index",
+                "text": "购物车",
+                "iconPath": "./assets/icons/cart.png",
+                "selectedIconPath": "./assets/icons/cart-o.png"
+            },
+            {
+                "pagePath": "pages/user/index",
+                "text": "我的",
+                "iconPath": "./assets/icons/my.png",
+                "selectedIconPath": "./assets/icons/my-o.png"
+            }
+        ]
+    },
+    "usingComponents": {
+        "van-search": "./miniprogram_npm/@vant/weapp/search/index",
+        "van-row": "./miniprogram_npm/@vant/weapp/row/index",
+        "van-col": "./miniprogram_npm/@vant/weapp/col/index",
+        "van-tab": "./miniprogram_npm/@vant/weapp/tab/index",
+        "van-tabs": "./miniprogram_npm/@vant/weapp/tabs/index",
+        "van-goods-action": "./miniprogram_npm/@vant/weapp/goods-action/index",
+        "van-goods-action-icon": "./miniprogram_npm/@vant/weapp/goods-action-icon/index",
+        "van-goods-action-button": "./miniprogram_npm/@vant/weapp/goods-action-button/index",
+        "van-button": "./miniprogram_npm/@vant/weapp/button/index",
+        "van-card": "./miniprogram_npm/@vant/weapp/card/index",
+        "van-submit-bar": "./miniprogram_npm/@vant/weapp/submit-bar/index",
+        "van-radio": "./miniprogram_npm/@vant/weapp/radio/index",
+        "van-radio-group": "./miniprogram_npm/@vant/weapp/radio-group/index",
+        "van-stepper": "./miniprogram_npm/@vant/weapp/stepper/index",
+        "van-swipe-cell": "./miniprogram_npm/@vant/weapp/swipe-cell/index",
+        "van-dialog": "./miniprogram_npm/@vant/weapp/dialog/index",
+        "van-cell": "./miniprogram_npm/@vant/weapp/cell/index",
+        "van-cell-group": "./miniprogram_npm/@vant/weapp/cell-group/index",
+        "van-image": "./miniprogram_npm/@vant/weapp/image/index",
+        "van-action-sheet": "./miniprogram_npm/@vant/weapp/action-sheet/index",
+        "van-grid": "./miniprogram_npm/@vant/weapp/grid/index",
+        "van-grid-item": "./miniprogram_npm/@vant/weapp/grid-item/index"
+
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#eb4450",
+        "navigationBarTitleText": "商城",
+        "navigationBarTextStyle": "white"
+    },
+    "sitemapLocation": "sitemap.json"
+}

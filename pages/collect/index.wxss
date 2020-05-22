@@ -1,0 +1,31 @@
+.goods_cl {
+    display: flex;
+    padding: 10rpx;
+    border-bottom: 2rpx solid #ccc;
+}
+
+.goods-img {
+    flex: 2;
+    padding: 10prx;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.goods-img image {
+    width: 80%;
+}
+
+.goods-detail {
+    padding: 40rpx 0;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.goods-price {
+    font-size: 38rpx;
+    color: var(--themeColor);
+}
